@@ -87,9 +87,6 @@ docker-compose ps
 ```
 ※-aオプションをつけると終了したコンテナも表示される
 
-## Webpacker configuration file not found /myapp/config/webpacker.yml が出たときの対処法
-`docker-compose run --rm web rails webpacker:install`を実行
-
 ## Dockerコンテナが落ちる問題の対処法
 
 #### 発生状態
