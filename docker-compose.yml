@@ -1,0 +1,41 @@
+version: '3'
+services:
+  postgres:
+    container_name: postgres_container
+    image: postgres
+    volumes_from:
+      - dbdata
+    environment:
+      - POSTGRES_PASSWORD=password
+
+  dbdata:
+    image: tianon/true
+    volumes:
+      - /var/lib/postgresql/data
+
+  web:
+    build: .
+    environment:
+      RAILS_ENV: development
+    ports:
+      - '3000:3000'
+    volumes_from:
+      - appdata
+    links:
+      - "postgres"
+
+  appdata:
+    image: tianon/true
+    volumes:
+      - ".:/workspace"
+
+  pgadmin:
+    container_name: pgadmin4_container
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: password
+      PGADMIN_DEFAULT_PORT: 5432
+    ports:
+      - "5050:80"

@@ -2,6 +2,8 @@
 Rails共同開発講座(8期: ハス組)のリポジトリです。
 
 ## Member
+- 氏名: かいた
+  - 好きなメソッド: split
 - 氏名: オオタ
   - 好きなメソッド: Array#slice
 - 氏名: ケンタ
@@ -88,9 +90,6 @@ docker ps
 docker-compose ps
 ```
 ※-aオプションをつけると終了したコンテナも表示される
-
-## Webpacker configuration file not found /myapp/config/webpacker.yml が出たときの対処法
-`docker-compose run --rm web rails webpacker:install`を実行
 
 ## Dockerコンテナが落ちる問題の対処法
 
