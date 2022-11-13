@@ -31,7 +31,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_10_134043) do
     t.string "apartments"
     t.string "email"
     t.string "phone_number"
-    t.string "AddUserClassNameToUsers"
     t.bigint "user_classification_id", null: false
     t.string "company_name"
     t.boolean "delete_flag"
