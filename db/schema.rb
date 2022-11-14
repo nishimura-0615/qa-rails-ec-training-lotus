@@ -16,21 +16,18 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_13_141629) do
 
   create_table "categories", force: :cascade do |t|
     t.string "category_name", limit: 32
-    t.string "string_limit", limit: 32
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "product_statuses", force: :cascade do |t|
     t.string "product_status_name", limit: 32
-    t.string "string_limit", limit: 32
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "products", force: :cascade do |t|
     t.string "product_name", limit: 64
-    t.string "string_limit", limit: 64
     t.bigint "category_id", null: false
     t.integer "price"
     t.string "description"
@@ -49,7 +46,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_13_141629) do
     t.integer "purchase_price"
     t.integer "product_quantity"
     t.string "purchase_company", limit: 128
-    t.string "string_limit", limit: 128
     t.datetime "order_date"
     t.datetime "purchase_date"
     t.bigint "product_id", null: false
@@ -60,7 +56,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_13_141629) do
 
   create_table "sale_statuses", force: :cascade do |t|
     t.string "sale_status", limit: 32
-    t.string "string_limit", limit: 32
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
