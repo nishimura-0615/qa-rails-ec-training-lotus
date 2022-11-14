@@ -15,24 +15,24 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_10_134043) do
   enable_extension "plpgsql"
 
   create_table "user_classifications", force: :cascade do |t|
-    t.string "user_classification_name"
+    t.string "user_classification_name", limit: 32
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "password"
-    t.string "last_name"
-    t.string "first_name"
-    t.string "zipcode"
-    t.string "prefecture"
-    t.string "municipality"
-    t.string "address"
-    t.string "apartments"
-    t.string "email"
-    t.string "phone_number"
+    t.string "password", limit: 64
+    t.string "last_name", limit: 16
+    t.string "first_name", limit: 16
+    t.string "zipcode", limit: 16
+    t.string "prefecture", limit: 16
+    t.string "municipality", limit: 16
+    t.string "address", limit: 32
+    t.string "apartments", limit: 32
+    t.string "email", limit: 128
+    t.string "phone_number", limit: 16
     t.bigint "user_classification_id", null: false
-    t.string "company_name"
+    t.string "company_name", limit: 128
     t.boolean "delete_flag"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
