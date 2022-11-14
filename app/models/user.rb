@@ -1,7 +1,5 @@
 class User < ApplicationRecord
   belongs_to :user_classification
-  has_many :orders, dependent::destory
-  has_many :products, dependent::destory
 
   validates :password, presence: true, length: { maximum: 64 }
   validates :last_name, presence: true, length: { maximum: 16 }
