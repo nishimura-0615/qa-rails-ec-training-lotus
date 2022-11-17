@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   belongs_to :user_classification
+  has_many :orders, dependent: :destory
 
   VALID_PASSWORD_REGEX = /\A[a-z0-9]+\z/i.freeze
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i.freeze
