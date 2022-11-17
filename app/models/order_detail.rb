@@ -1,7 +1,7 @@
 class OrderDetail < ApplicationRecord
+  belongs_to :product
   belongs_to :order
   belongs_to :shipment_status
 
-  VALID_NUMBER_REGEX = /\A[0-9]+\z/.freeze
-  validates :order_quantity, length: { minimum: 1 }, format: { with: VALID_NUMBER_REGEX }
+  validates :order_quantity, presence: true, numericality: {only_integer: true, greater_than_or_equal_to: 1}
 end
