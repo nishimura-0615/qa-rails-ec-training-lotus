@@ -25,7 +25,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_16_234542) do
     t.bigint "order_id", null: false
     t.bigint "shipment_status_id", null: false
     t.string "order_detail_number", limit: 64, null: false
-    t.bigint "order_quantity", null: false
+    t.integer "order_quantity", null: false
     t.datetime "shipment_date", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
