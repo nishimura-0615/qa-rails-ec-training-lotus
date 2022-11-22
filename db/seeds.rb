@@ -7,9 +7,35 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 user_classification = UserClassification.create!(user_classification_name: "一般ユーザー")
-User.create!([{ email: "user001@example.com", password: "password1234", first_name: "user", last_name: "001",
-             user_classification_id: user_classification.id, zipcode: "123-4567", prefecture: "東京都", municipality: "千代田区", address: "代々木1丁目31-1",
-             apartments: "代々木ビル1F", phone_number: "0366192257", company_name: "株式会社 清水塾" },
-             { email: "user002@example.com", password: "password1234", first_name: "user", last_name: "002",
-              user_classification_id: user_classification.id, zipcode: "123-4567", prefecture: "東京都", municipality: "千代田区", address: "代々木2丁目5-1",
-              apartments:"代々木ビル1F", phone_number:"0366192256", company_name: "株式会社 清水塾" }])
+User.create!(
+  [
+    {
+      email: "user001@example.com",
+      password: "password1234",
+      first_name: "user",
+      last_name: "001",
+      user_classification_id: user_classification.id,
+      zipcode: "123-4567",
+      prefecture: "東京都",
+      municipality: "千代田区",
+      address: "代々木1丁目31-1",
+      apartments: "代々木ビル1F",
+      phone_number: "0366192257",
+      company_name: "株式会社 清水塾"
+     },
+    {
+      email: "user002@example.com",
+      password: "password1234",
+      first_name: "user",
+      last_name: "002",
+      user_classification_id: user_classification.id,
+      zipcode: "123-4567",
+      prefecture: "東京都",
+      municipality: "千代田区",
+      address: "代々木2丁目5-1",
+      apartments: "代々木ビル1F",
+      phone_number: "0366192256",
+      company_name: "株式会社 清水塾"
+    }
+    ]
+  )
