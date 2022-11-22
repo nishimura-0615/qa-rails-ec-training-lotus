@@ -7,6 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 user_classification = UserClassification.create!(user_classification_name: "一般ユーザー")
+user_classification = UserClassification.create!(user_classification_name:"販売者ユーザー")
 User.create!(
   [
     {
