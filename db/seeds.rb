@@ -7,7 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 user_classification = UserClassification.create!(user_classification_name: "一般ユーザー")
-user_classification = UserClassification.create!(user_classification_name:"販売者ユーザー")
+user_classification = UserClassification.create!(user_classification_name: "販売者ユーザー")
 User.create!(
   [
     {
@@ -22,7 +22,8 @@ User.create!(
       address: "代々木1丁目31-1",
       apartments: "代々木ビル1F",
       phone_number: "0366192257",
-      company_name: "株式会社 清水塾"
+      company_name: "株式会社 清水塾",
+      delete_flag: true
      },
     {
       email: "user002@example.com",
@@ -36,7 +37,8 @@ User.create!(
       address: "代々木2丁目5-1",
       apartments: "代々木ビル1F",
       phone_number: "0366192256",
-      company_name: "株式会社 清水塾"
+      company_name: "株式会社 清水塾",
+      delete_flag: true
     }
     ]
   )
