@@ -6,8 +6,8 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-user_classification = UserClassification.create!(user_classification_name: "一般ユーザー")
-user_classification = UserClassification.create!(user_classification_name: "販売者ユーザー")
+general_user_classificationn = UserClassification.create!(user_classification_name: "一般ユーザー")
+seller_user_classification = UserClassification.create!(user_classification_name: "販売者ユーザー")
 User.create!(
   [
     {
