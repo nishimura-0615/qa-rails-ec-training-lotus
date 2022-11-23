@@ -23,7 +23,7 @@ User.create!(
       apartments: "代々木ビル1F",
       phone_number: "0366192257",
       company_name: "株式会社 清水塾",
-      delete_flag: true
+      delete_flag: false
      },
     {
       email: "user002@example.com",
@@ -38,7 +38,7 @@ User.create!(
       apartments: "代々木ビル1F",
       phone_number: "0366192256",
       company_name: "株式会社 清水塾",
-      delete_flag: true
+      delete_flag: false
     }
     ]
   )
