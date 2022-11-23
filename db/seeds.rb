@@ -6,8 +6,9 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-general_user_classificationn = UserClassification.create!(user_classification_name: "一般ユーザー")
+general_user_classification = UserClassification.create!(user_classification_name: "一般ユーザー")
 seller_user_classification = UserClassification.create!(user_classification_name: "販売者ユーザー")
+
 User.create!(
   [
     {
@@ -24,7 +25,7 @@ User.create!(
       phone_number: "0366192257",
       company_name: "株式会社 清水塾",
       delete_flag: false
-     },
+    },
     {
       email: "user002@example.com",
       password: "password1234",
@@ -40,5 +41,5 @@ User.create!(
       company_name: "株式会社 清水塾",
       delete_flag: false
     }
-    ]
-  )
+  ]
+)
