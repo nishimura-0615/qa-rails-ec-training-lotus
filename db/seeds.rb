@@ -22,9 +22,9 @@ user = User.create!(
       apartments: 'hoge101',
       email: 'test1@test.com',
       phone_number: '09012345678',
-      user_classification_id: '1',
+      user_classification_id: 1,
       company_name: 'サンプル株式会社',
-      delete_flag: true
+      delete_flag: false
     },
     {
       password: 'password',
@@ -37,25 +37,30 @@ user = User.create!(
       apartments: 'hoge202',
       email: 'test2@test.com',
       phone_number: '09098765432',
-      user_classification_id: '1',
+      user_classification_id: 1,
       company_name: 'サンプル株式会社',
-      delete_flag: true
+      delete_flag: false
     }
   ]
 )
-category = Category.create!(
-  [
-    { category_name: 'トップス' },
-    { category_name: 'アウター' },
-    { category_name: 'パンツ' },
-    { category_name: 'シューズ' }
-  ]
-)
+# category = Category.create!(
+#   [
+#     { category_name: 'トップス' },
+#     { category_name: 'アウター' },
+#     { category_name: 'パンツ' },
+#     { category_name: 'シューズ' }
+#   ]
+# )
+
+category_1 = Category.create!(category_name: 'トップス')
+category_2 = Category.create!(category_name: 'アウター')
+category_3 = Category.create!(category_name: 'パンツ')
+category_4 = Category.create!(category_name: 'シューズ')
 
 sale_status = SaleStatus.create!(
   [
-    { sale_status: '定価' },
-    { sale_status: 'セール' }
+    { sale_status_name: '定価' },
+    { sale_status_name: 'セール' }
   ]
 )
 
@@ -70,25 +75,25 @@ product = Product.create!(
   [
     {
       product_name: 'ニット',
-      category_id: '1',
-      price: '15000',
+      category_id: 1,
+      price: 15000,
       description: '素材:綿50%,ウール50%, サイズ:M',
-      sale_status_id: '1',
-      product_status_id: '1',
-      regist_date: '2022/10/20',
-      user_id: '1',
-      delete_flag: 0
+      sale_status_id: 1,
+      product_status_id: 1,
+      regist_date: Time.new(2022, 10, 21, 13, 30, 0, "+09:00"),
+      user_id: 1,
+      delete_flag: false
     },
     {
       product_name: 'スニーカー',
-      category_id: '4',
-      price: '20000',
+      category_id: 4,
+      price: 20000,
       description: '素材:キャンパス, サイズ:27.0cm',
-      sale_status_id: '1',
-      product_status_id: '1',
-      regist_date: '2022/10/20',
-      user_id: '2',
-      delete_flag: 0
+      sale_status_id: 1,
+      product_status_id: 1,
+      regist_date: Time.new(2022, 10, 21, 14, 00, 0, "+09:00"),
+      user_id: 2,
+      delete_flag: false
     }
   ]
 )
@@ -96,20 +101,20 @@ product = Product.create!(
 Purchase.create!(
   [
     {
-      purchase_price: '10000',
-      purchase_quantity: '2',
+      purchase_price: 10000,
+      purchase_quantity: 2,
       purchase_company: 'hoge株式会社',
-      order_date: '2022/11/20',
-      purchase_date: '2022/11/25',
-      product_id: '1'
+      order_date: Time.new(2022, 10, 21, 14, 00, 0, "+09:00"),
+      purchase_date: Time.new(2022, 10, 25, 14, 00, 0, "+09:00"),
+      product_id: 1
     },
     {
-      purchase_price: '15000',
-      purchase_quantity: '1',
+      purchase_price: 15000,
+      purchase_quantity: 1,
       purchase_company: 'foo株式会社',
-      order_date: '2022/11/22',
-      purchase_date: '2022/11/27',
-      product_id: '2'
+      order_date: Time.new(2022, 10, 22, 14, 00, 0, "+09:00"),
+      purchase_date: Time.new(2022, 10, 26, 14, 00, 0, "+09:00"),
+      product_id: 2
     }
   ]
 )

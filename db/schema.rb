@@ -79,7 +79,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_18_032359) do
   end
 
   create_table "sale_statuses", force: :cascade do |t|
-    t.string "sale_status", limit: 32
+    t.string "sale_status_name", limit: 32
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
