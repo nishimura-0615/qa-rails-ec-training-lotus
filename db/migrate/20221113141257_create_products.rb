@@ -8,7 +8,7 @@ class CreateProducts < ActiveRecord::Migration[7.0]
       t.string :description
       t.references :sale_status, null: false, foreign_key: true
       t.references :product_status, null: false, foreign_key: true
-      t.datetime :regist_date, null: false
+      t.datetime :resist_date, null: false
       t.boolean :delete_flag, default: false, null: false
       t.timestamps
     end
