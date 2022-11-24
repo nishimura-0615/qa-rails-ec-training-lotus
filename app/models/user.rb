@@ -17,7 +17,7 @@ class User < ApplicationRecord
   validates :apartments, presence: true, length: { maximum: 20 }
   validates :email, presence: true, length: { maximum: 128 }, uniqueness: true, format: { with: VALID_EMAIL_REGEX }
   validates :phone_number, presence: true, length: { maximum: 15 }, uniqueness: true, format: { with: VALID_NUMBER_REGEX }
-  validates :company_name, presence: true, length: { maximum: 128 }, format: { with: VALID_NUMBER_REGEX }
+  validates :company_name, presence: true, length: { maximum: 128 }
   validates :delete_flag, inclusion: { in: [true, false] }
 
 end
