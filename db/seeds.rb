@@ -27,7 +27,7 @@ seller_user_classification = UserClassification.create!(user_classification_name
         delete_flag: false
       },
       {
-        email: "user#{n + 1}@example.com",
+        email: "seller_user#{n + 1}@example.com",
         password: "password1234",
         first_name: "user",
         last_name: "#{n + 1}",
