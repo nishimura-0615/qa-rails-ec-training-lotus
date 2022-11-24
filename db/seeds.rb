@@ -16,7 +16,7 @@ seller_user_classification = UserClassification.create!(user_classification_name
         password: "password1234",
         first_name: "user",
         last_name: "#{n+1}",
-        general_user_classification: general_user_classification.id,
+        user_classification_id: general_user_classification.id,
         zipcode: "123-4567",
         prefecture: "東京都",
         municipality: "千代田区",
