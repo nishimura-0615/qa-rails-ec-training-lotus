@@ -24,7 +24,7 @@ seller_user_classification = UserClassification.create!(user_classification_name
         apartments: "代々木ビル1F",
         phone_number: sprintf("%010d", n + 1),
         company_name: "株式会社 清水塾",
-        delete_flag: false
+        delete_flag: false,
       },
       {
         email: "seller_user#{n + 1}@example.com",
@@ -39,7 +39,7 @@ seller_user_classification = UserClassification.create!(user_classification_name
         apartments: "代々木ビル1F",
         phone_number: sprintf("%011d", n + 1),
         company_name: "株式会社 清水塾",
-        delete_flag: false
+        delete_flag: false,
       }
     ]
   )
