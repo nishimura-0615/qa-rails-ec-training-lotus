@@ -12,7 +12,7 @@ seller_user_classification = UserClassification.create!(user_classification_name
   User.create!(
     [
       {
-        email: "user#{n+1}@example.com",
+        email: "user#{n + 1}@example.com",
         password: "password1234",
         first_name: "user",
         last_name: "#{n+1}",
@@ -27,11 +27,11 @@ seller_user_classification = UserClassification.create!(user_classification_name
         delete_flag: false
       },
       {
-        email: "user#{n+1}@example.com",
+        email: "user#{n + 1}@example.com",
         password: "password1234",
         first_name: "user",
         last_name: "#{n+1}",
-        user_classification_id: : seller_user_classification.id,
+        user_classification_id: seller_user_classification.id,
         zipcode: "123-4567",
         prefecture: "東京都",
         municipality: "千代田区",
