@@ -67,6 +67,28 @@ product_1 = Product.create!(
   delete_flag: false,
 )
 product_2 = Product.create!(
+  product_name: 'コート',
+  category_id: category_2.id,
+  price: 50000,
+  description: '素材:綿50%,ウール50%, サイズ:L',
+  sale_status_id: sale_status_1.id,
+  product_status_id: product_status_1.id,
+  regist_date: Time.new(2022, 10, 21, 13, 30, 0, "+09:00"),
+  user_id:  User.find_by(email:'user2@example.com').id,
+  delete_flag: false,
+)
+product_3 = Product.create!(
+  product_name: 'スラックス',
+  category_id: category_3.id,
+  price: 12000,
+  description: '素材:綿30%,ウール70%, サイズ:M',
+  sale_status_id: sale_status_2.id,
+  product_status_id: product_status_2.id,
+  regist_date: Time.new(2022, 10, 21, 13, 30, 0, "+09:00"),
+  user_id:  User.find_by(email:'user1@example.com').id,
+  delete_flag: false,
+)
+product_4 = Product.create!(
   product_name: 'スニーカー',
   category_id: category_4.id,
   price: 20000,
@@ -94,7 +116,7 @@ Purchase.create!(
       purchase_company: 'foo株式会社',
       order_date: Time.new(2022, 10, 22, 14, 00, 0, "+09:00"),
       purchase_date: Time.new(2022, 10, 26, 14, 00, 0, "+09:00"),
-      product_id: product_2.id
+      product_id: product_4.id
     }
   ]
 )
