@@ -37,7 +37,7 @@ seller_user_classification = UserClassification.create!(user_classification_name
         municipality: "千代田区",
         address: "代々木2丁目5-1",
         apartments: "代々木ビル1F",
-        phone_number: sprintf("%010d", n + 1),
+        phone_number: sprintf("%011d", n + 1),
         company_name: "株式会社 清水塾",
         delete_flag: false
       }
