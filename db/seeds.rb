@@ -63,8 +63,8 @@ product_1 = Product.create!(
   sale_status_id: sale_status_1.id,
   product_status_id: product_status_1.id,
   regist_date: Time.new(2022, 10, 21, 13, 30, 0, "+09:00"),
-  user_id: user_1.id,
-  delete_flag: false
+  user_id:  User.find_by(email:'user1@example.com').id,
+  delete_flag: false,
 )
 product_2 = Product.create!(
   product_name: 'スニーカー',
@@ -74,8 +74,8 @@ product_2 = Product.create!(
   sale_status_id: sale_status_1.id,
   product_status_id: product_status_1.id,
   regist_date: Time.new(2022, 10, 21, 14, 00, 0, "+09:00"),
-  user_id: user_2.id,
-  delete_flag: false
+  user_id:  User.find_by(email:'user2@example.com').id,
+  delete_flag: false,
 )
 
 Purchase.create!(
