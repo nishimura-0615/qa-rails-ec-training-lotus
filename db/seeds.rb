@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
 general_user_classification = UserClassification.create!(user_classification_name: "一般ユーザー")
 seller_user_classification = UserClassification.create!(user_classification_name: "販売者ユーザー")
 5.times do |n|
