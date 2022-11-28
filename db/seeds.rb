@@ -121,3 +121,79 @@ Purchase.create!(
     }
   ]
 )
+
+  sent_shipment_status = ShipmentStatus.create!(shipment_status_name:"発送済")
+  shipping_preparation_status = ShipmentStatus.create!(shipment_status_name:"準備中")
+
+
+  order_1 = Order.create!(
+    user_id: User.find_by(email:'user1@example.com').id,
+    order_date: Time.new(2022, 10, 22, 14, 00, 0, "+09:00"),
+    order_number:sprintf("%011d",1)
+  )
+  order_2 = Order.create!(
+    user_id: User.find_by(email:'user2@example.com').id,
+    order_date: Time.new(2022, 10, 22, 14, 00, 0, "+09:00"),
+    order_number:sprintf("%012d",1)
+  )
+
+  OrderDetail.create!(
+    [
+      {
+        product_id: product_1.id,
+        order_id: order_1.id,
+        shipment_status_id: sent_shipment_status.id,
+        order_quantity: 2,
+        shipment_date: Time.new(2022, 10, 22, 14, 00, 0, "+09:00")
+      },
+      {
+        product_id: product_2.id,
+        order_id: order_1.id,
+        shipment_status_id: sent_shipment_status.id,
+        order_quantity: 2,
+        shipment_date: Time.new(2022, 10, 22, 14, 00, 0, "+09:00")
+      },
+      {
+        product_id: product_3.id,
+        order_id: order_1.id,
+        shipment_status_id: sent_shipment_status.id,
+        order_quantity: 2,
+        shipment_date: Time.new(2022, 10, 22, 14, 00, 0, "+09:00")
+      },
+      {
+        product_id: product_4.id,
+        order_id: order_1.id,
+        shipment_status_id: sent_shipment_status.id,
+        order_quantity: 2,
+        shipment_date: Time.new(2022, 10, 22, 14, 00, 0, "+09:00")
+      },
+      {
+        product_id: product_1.id,
+        order_id: order_2.id,
+        shipment_status_id: shipping_preparation_status.id,
+        order_quantity: 2,
+        shipment_date: Time.new(2022, 10, 22, 14, 00, 0, "+09:00")
+      },
+      {
+        product_id: product_2.id,
+        order_id: order_2.id,
+        shipment_status_id: shipping_preparation_status.id,
+        order_quantity: 2,
+        shipment_date: Time.new(2022, 10, 22, 14, 00, 0, "+09:00")
+      },
+      {
+        product_id: product_3.id,
+        order_id: order_2.id,
+        shipment_status_id: shipping_preparation_status.id,
+        order_quantity: 2,
+        shipment_date: Time.new(2022, 10, 22, 14, 00, 0, "+09:00")
+      },
+      {
+        product_id: product_4.id,
+        order_id: order_2.id,
+        shipment_status_id: shipping_preparation_status.id,
+        order_quantity: 2,
+        shipment_date: Time.new(2022, 10, 22, 14, 00, 0, "+09:00")
+      }
+    ]
+  )
