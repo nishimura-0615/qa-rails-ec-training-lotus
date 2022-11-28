@@ -129,12 +129,12 @@ Purchase.create!(
   order_1 = Order.create!(
     user_id: User.find_by(email:'user1@example.com').id,
     order_date: Time.new(2022, 10, 22, 14, 00, 0, "+09:00"),
-    order_number:sprintf("%011d",1)
+    order_number: sprintf("%011d",1)
   )
   order_2 = Order.create!(
     user_id: User.find_by(email:'user2@example.com').id,
     order_date: Time.new(2022, 10, 22, 14, 00, 0, "+09:00"),
-    order_number:sprintf("%012d",1)
+    order_number: sprintf("%012d",1)
   )
 
   OrderDetail.create!(
