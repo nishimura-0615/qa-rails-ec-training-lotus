@@ -21,3 +21,9 @@ Rails/SafeNavigation:
 
 Rails/SaveBang:
   Enabled: true
+
+Rails/UnknownEnv:
+  Environments:
+    - development # rubocop default.yml
+    - test        # rubocop default.yml
+    - production  # rubocop default.yml
