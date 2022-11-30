@@ -1,5 +1,5 @@
 source "https://rubygems.org"
-git_source(:github) {|repo| "https://github.com/#{repo}.git" }
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.1.2"
 
@@ -28,7 +28,7 @@ gem "stimulus-rails"
 gem "jbuilder"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
+gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
@@ -37,17 +37,17 @@ gem "bootsnap", require: false
 gem "sassc-rails"
 
 group :development, :test do
-  gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
-  gem "debug", platforms: %i[mri mingw x64_mingw]
-  gem "pry-rails"
+  gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'pry-rails'
 end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
+  gem "web-console"
   gem "rubocop"
   gem "rubocop-rails"
   gem "rubocop-rspec"
-  gem "web-console"
 end
 
 group :test do
