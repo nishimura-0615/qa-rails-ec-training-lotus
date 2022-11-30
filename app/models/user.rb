@@ -7,6 +7,7 @@ class User < ApplicationRecord
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i.freeze
   VALID_ZIPCODE_REGEX = /\A\d{3}[-]\d{4}\z/.freeze
   VALID_NUMBER_REGEX = /\A[0-9]+\z/.freeze
+  has_secure_password
   validates :password, presence: true, length: { minimum: 6, maximum: 15 }, format: { with: VALID_PASSWORD_REGEX }
   validates :last_name, presence: true, length: { maximum: 10 }
   validates :first_name, presence: true, length: { maximum: 10 }
