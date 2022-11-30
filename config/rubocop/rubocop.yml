@@ -117,8 +117,6 @@ Security/YAMLLoad:
 Style/Alias:
   EnforcedStyle: prefer_alias_method
 
-  EnforcedStyle: conditionals
-
 Style/AsciiComments:
   Enabled: false
 
