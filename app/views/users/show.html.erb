@@ -128,7 +128,7 @@ sans-serif;
                 氏名
               </td>
               <td>
-               <%= @user.first_name%><%= @user.last_name%>
+               <%= "#{@user.first_name} #{@user.last_name}" %>
               </td>
             </tr>
 
@@ -140,10 +140,7 @@ sans-serif;
                 <br>
                 <%= @user.zipcode%>
                  <br>
-                <%= @user.prefecture%>
-                <%= @user.municipality%>
-                <%= @user.address%>
-                <%= @user.apartments%>
+                <%= "#{@user.prefecture} #{@user.municipality}#{@user.address}#{@user.apartments}"=%>
               </td>
             </tr>
             <tr>
