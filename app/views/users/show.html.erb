@@ -95,7 +95,7 @@ sans-serif;
         </div>
         <div>
           <ul>
-            <p>〇〇 ××さん</p>
+            <p><%@user.id %></p>
           </ul>
           <ul class="navbar-nav">
             <a class="nav-link text-dark" href="#">商品検索</a>
@@ -115,12 +115,11 @@ sans-serif;
       <div class="container-fluid">
         <table class="table">
           <tbody>
+
             <tr>
               <td class="text-center">
-                ユーザID
               </td>
               <td>
-                User
               </td>
             </tr>
 
@@ -129,7 +128,7 @@ sans-serif;
                 氏名
               </td>
               <td>
-                ○○ ☓☓
+               <%= @user.first_name%><%= @user.last_name%>
               </td>
             </tr>
 
@@ -138,8 +137,13 @@ sans-serif;
                 住所
               </td>
               <td>
-                〒○〇〇-○○○○<br>
-                沖縄県那覇市○○ ○-○-◯
+                <br>
+                <%= @user.zipcode%>
+                 <br>
+                <%= @user.prefecture%>
+                <%= @user.municipality%>
+                <%= @user.address%>
+                <%= @user.apartments%>
               </td>
             </tr>
             <tr>
@@ -147,14 +151,14 @@ sans-serif;
                 電話番号
               </td>
               <td>
-                ○○○-○○○○-○〇〇○
+              <%= @user.phone_number%>
               </td>
             <tr>
               <td class="text-center">
                 メールアドレス
               </td>
               <td>
-                User@example.com
+                <%= @user.email%>
               </td>
             </tr>
           </tbody>
