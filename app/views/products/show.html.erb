@@ -114,7 +114,7 @@ sans-serif;
           <h1 class="text-center">商品情報</h1>
           <h2 class="text-center"><%= @product.product_name =%></h2>
           <div class="offset-sm-3">
-            <p class="offset-sm-6">商品カテゴリ：衣料品・靴</p>
+            <p class="offset-sm-6"><%= @product.category.category_name =%></p>
             <p>商品説明</p>
             <p>探求学園限定商品！</p>
             <p class="mt-4 mb-5"><%= @product.price=%>円</p>
