@@ -139,21 +139,11 @@ sans-serif;
 
           <%= form.label :phone_number, "電話番号" %>
           <%= form.text_field :phone_number, type: "text", size: 65, style: "margin-left:10px", pattern: "(^[0-9]+$){1,15}" %>
-          <%= form.submit %>
+
+          <%= form.submit "修正", class: "btn btn-primary" %>
+          <%= form.submit "退会", class: "btn btn-danger" %>
       <% end %>
     </table>
-
-    <div class="row mt-5">
-      <div class="col-5">
-        <div class="d-flex justify-content-end">
-          <button class="btn btn-primary" type="submit">修正</button>
-        </div>
-      </div>
-
-      <div class="col-5 offset-2">
-        <button class="btn btn-danger" type="submit">退会</button>
-      </div>
-    </div>
   </main>
   <footer>
     <h1>探求学園Rails専攻</h1>
