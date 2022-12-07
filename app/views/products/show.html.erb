@@ -30,9 +30,7 @@
         メイリオ,
         Meiryo,
         "ＭＳ Ｐゴシック",
-        "Helvetica
-Neue", Helvetica,
-sans-serif;
+        "HelveticaNeue", Helvetica,sans-serif;
     }
 
     header {
@@ -86,27 +84,6 @@ sans-serif;
 </head>
 
 <body>
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-light">
-      <div class="container-fluid">
-        <div class="navbar-nav me-auto">
-          <h1><a class="nav-link navbar-brand" href="#">探求学園Rails専攻</a></h1>
-        </div>
-        <div>
-          <ul>
-            <p>〇〇 ××さん</p>
-          </ul>
-          <ul class="navbar-nav">
-            <a class="nav-link text-dark" href="#">商品検索</a>
-            <a class="nav-link text-dark" href="#">カート</a>
-            <a class="nav-link text-dark" href="#">注文履歴</a>
-            <a class="nav-link text-dark" href="#">ユーザ情報</a>
-            <a class="nav-link text-dark" href="#">ログアウト</a>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
   <main>
     <% if @product.present? %>
       <div class="container">
@@ -140,3 +117,4 @@ sans-serif;
       </div>
     <% end %>
   </main>
+</body>
