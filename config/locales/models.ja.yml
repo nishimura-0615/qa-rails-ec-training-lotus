@@ -1,0 +1,66 @@
+ja:
+  activerecord:
+    models:
+      user_classification: ユーザー種別
+      user: ユーザー
+      order: 注文
+      order_detail: 注文詳細
+      shipment_status: 発送状態
+      category: カテゴリー
+      sale_status: 販売状態
+      product_status: 商品状態
+      product: 商品
+      purchase: 仕入
+    attributes:
+      user_classification:
+        id: ID
+        user_classification_name: ユーザー種別名
+      user:
+        id: ID
+        password: パスワード
+        last_name: 姓
+        first_name: 名
+        zipcode: 郵便番号
+        email: メールアドレス
+        prefecture: 都道府県
+        municipality: 市町村区
+        address: 番地
+        apartments: マンション・部屋番号
+        email: メールアドレス
+        phone_number: 電話番号
+        company_name: 会社名
+        delete_flag: deleteフラグ
+      order:
+        id: ID
+        order_date: 注文日
+        order_number: 注文番号
+      order_detail:
+        id: ID
+        order_quantity: 注文個数
+        shipment_date: 発送日
+      shipment_status:
+        id: ID
+        shipment_status_name: 発送状態名
+      category:
+        id: ID
+        category_name: カテゴリー名
+      sale_statuses:
+        id: ID
+        sale_statuses_name: 販売状態名
+      product_statuses:
+        id: ID
+        product_statuses_name: 商品状態名
+      product:
+        id: ID
+        product_name: 商品名
+        price: 販売単価
+        description: 商品説明
+        regist_date: 商品登録日
+        delete_flag: deleteフラグ
+      purchase:
+        id: ID
+        purchase_price: 仕入価格
+        purchase_quantity: 仕入個数
+        purchase_company: 仕入先会社
+        order_date: 発注日
+        purchase_date: 納入日
