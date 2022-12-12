@@ -10,10 +10,10 @@ class UsersController < ApplicationController
   def update
     @user = User.find_by(id: params[:id])
     if @user.update!(user_params)
-      flash[:success]
+      flash[:success] = I18n.t("activerecord.errors.models.user.message.update.success")
       redirect_to @user
     else
-      flash.now[:danger]
+      flash.now[:danger] = I18n.t("activerecord.errors.models.user.message.update.danger")
       render "users/edit"
     end
   end
