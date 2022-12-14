@@ -38,8 +38,6 @@ gem "sassc-rails"
 
 gem "bcrypt"
 
-gem 'bootstrap', '~> 5.0.0-beta3'
-
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
   gem "debug", platforms: %i[mri mingw x64_mingw]
