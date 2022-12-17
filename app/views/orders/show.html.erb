@@ -10,8 +10,8 @@
           </div>
         </div>
           <div class="mt-5 ml-3">
-            <p>注文番号：<%=@order.order_number%></p>
-            <p>注文状態：<%=@order_detail.shipment_status_id%></p>
+            <p>注文番号：<%= @order.order_number%></p>
+            <p>注文状態：<%= @order_detail.shipment_status_id%></p>
           </div>
           <div class="text-end">
             <button type="button" class="btn btn-danger">注文をキャンセルする</button>
@@ -30,7 +30,7 @@
           </thead>
           <tbody>
             <tr>
-            <td><% @order.order_details.each do |order_detail| %> </td>
+            <td><%= @order.order_details.each do |order_detail| %> </td>
             <td><%= order_detail.product.id%></td>
             <td><%= order_detail.product.category.category_name %></td>
             <td><%= order_detail.product.price%>円</td>
@@ -42,8 +42,8 @@
         </table>
         <div class="border-top border-dark">
           <div class="mt-2 offset-sm-6">
-            <p class="ml-4"></p><th scope="col" class="border-top border-bottom">合計　
-            <td><% @order.order_details.each do |order_detail| %> </td>
+            <p class="ml-4"></p><th scope="col" class="border-top border-bottom">合計
+            <td><%= @order.order_details.each do |order_detail| %> </td>
             <td><%= sub_total = order_detail.product.price.to_i * order_detail.order_quantity.to_i%>円</td>
             <% end %>
             </th>
