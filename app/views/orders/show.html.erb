@@ -30,7 +30,7 @@
           </thead>
           <tbody>
             <tr>
-            <td><%= @order.order_details.each do |order_detail| %> </td>
+            <%= @order.order_details.each do |order_detail| %>
             <td><%= order_detail.product.id%></td>
             <td><%= order_detail.product.category.category_name %></td>
             <td><%= order_detail.product.price%>円</td>
