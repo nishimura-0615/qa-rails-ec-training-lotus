@@ -29,24 +29,22 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-            <%= @order.order_details.each do |order_detail| %>
-            <td><%= order_detail.product.id %></td>
-            <td><%= order_detail.product.category.category_name %></td>
-            <td><%= order_detail.product.price %>円</td>
-            <td><%= order_detail.order_quantity %></td>
-            <td><%= order_detail.product.price.to_i*order_detail.order_quantity.to_i %>円</td>
-            <td><%= order_detail.shipment_status.shipment_status_name %></td>
+            <% @order.order_details.each.with_index(1) do |order_detail,index| %>
+              <tr>
+                <td><%= index %></td>
+                <td><%= order_detail.product.product_name %></td>
+                <td><%= order_detail.product.category.category_name %></td>
+                <td><%= order_detail.product.price %>円</td>
+                <td><%= order_detail.order_quantity %></td>
+                <td><%= order_detail.sub_total%>円</td>
+                <td><%= order_detail.shipment_status.shipment_status_name %></td>
+              </tr>
             <% end %>
           </tbody>
         </table>
         <div class="border-top border-dark">
           <div class="mt-2 offset-sm-6">
-            <p class="ml-4"></p><th scope="col" class="border-top border-bottom">合計
-            <td><%= @order.order_details.each do |order_detail| %> </td>
-            <td><%= sub_total = order_detail.product.price.to_i * order_detail.order_quantity.to_i %>円</td>
-            <% end %>
-            </th>
+            <p class="ml-4">合計<%= @order.total_price %>円</p>
           </div>
         </div>
         <div class="text-end mb-5">
