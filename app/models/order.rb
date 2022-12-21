@@ -9,4 +9,10 @@ class Order < ApplicationRecord
     end
     sub_totals.sum
   end
+
+  def junbichuu?
+    order_details.each do |_order_detail|
+      order_details.any? { |order_details| order_details.shipment_status.shipment_status_name == "準備中" }
+    end
+  end
 end

@@ -13,9 +13,11 @@
             <p>注文番号：<%= @order.order_number %></p>
             <p>注文状態：<%= @order.order_details.first.shipment_status.shipment_status_name %></p>
           </div>
+       <% if @order.junbichuu? %>
           <div class="text-end">
             <button type="button" class="btn btn-danger">注文をキャンセルする</button>
           </div>
+        <% end %>
         <table class="table table-borderless mt-3">
           <thead>
             <tr>
