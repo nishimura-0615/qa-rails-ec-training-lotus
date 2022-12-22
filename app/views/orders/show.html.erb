@@ -9,13 +9,11 @@
             <p class="offset-sm-2">○○　××様</p>
           </div>
         </div>
-        <% if @order.delivered? %>
-          <div class="mt-5 ml-3">
-            <p>注文番号：<%= @order.order_number %></p>
-            <p>注文状態：<%= @order.order_details.first.shipment_status.shipment_status_name %></p>
-          </div>
-        <% end %>
-       <% if @order.prepared? %>
+        <div class="mt-5 ml-3">
+          <p>注文番号：<%= @order.order_number %></p>
+          <p>注文状態：<%= @order.prepared? ? "準備中" : "発送済" %></p>
+        </div>
+        <% if @order.prepared? %>
           <div class="text-end">
             <button type="button" class="btn btn-danger">注文をキャンセルする</button>
           </div>

@@ -7,10 +7,6 @@ class Order < ApplicationRecord
   end
 
   def prepared?
-    order_details.any? { |order_detail| order_detail.shipment_status.shipment_status_name == "準備中" }
-  end
-
-  def delivered?
-    order_details.any? { |order_detail| order_detail.shipment_status.shipment_status_name == "発送済" }
+    order_details.any? {|order_detail| order_detail.shipment_status.shipment_status_name == "準備中" }
   end
 end
