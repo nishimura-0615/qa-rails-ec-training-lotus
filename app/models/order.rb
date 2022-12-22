@@ -7,8 +7,6 @@ class Order < ApplicationRecord
   end
 
   def prepared?
-    order_details.each do |_order_detail|
-      order_details.any? { |order_details| order_details.shipment_status.shipment_status_name == "準備中" }
-    end
+    order_details.any? { |order_detail| order_detail.shipment_status.shipment_status_name == "準備中" }
   end
 end
