@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new', as: 'login'
   resources :users
   resources :products
+  resources :orders
   # Defines the root path route ("/")
   # root "articles#index"
 end
