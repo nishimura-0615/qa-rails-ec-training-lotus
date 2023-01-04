@@ -6,17 +6,21 @@
       </div>
       <div>
         <ul class="navbar-nav">
-            <% if logged_in? %>
-              <p><%= "#{@user.first_name} #{@user.last_name}" %></p>
+         <p><%= "#{@user.first_name} #{@user.last_name}" %></p>
+          <% if logged_in? %>
+            <ul class="navbar-nav">
               <a class="nav-link text-dark" href="#">商品検索</a>
               <a class="nav-link text-dark" href="#">カート</a>
               <a class="nav-link text-dark" href="#">注文履歴</a>
               <%= link_to 'ユーザー情報', user_path(current_user), class: "nav-link text-dark button" %>
               <%= button_to 'ログアウト', logout_path, method: :delete, class: "nav-link text-dark button" %>
-            <% else %>
+            </ul>
+          <% else %>
+            <ul class="navbar-nav">
               <%= link_to 'ログイン', login_path, class: "nav-link text-dark button" %>
               <a class="nav-link text-dark" href="#">新規登録</a>
-            <% end %>
+            </ul>
+          <% end %>
         </ul>
       </div>
     </div>
