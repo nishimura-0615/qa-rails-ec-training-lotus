@@ -6,7 +6,7 @@
       </div>
       <div>
         <% if logged_in? %>
-          <p><%= "#{@user.first_name} #{@user.last_name}" %></p>
+          <p><%= "#{ current_user.first_name } #{ current_user.last_name }" %></p>
           <ul class="navbar-nav">
             <!-- 商品検索ページが実装されたらリンクを作ること  -->
             <a class="nav-link text-dark" href="#">商品検索</a>
