@@ -2,11 +2,11 @@
   <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container-fluid">
       <div class="navbar-nav me-auto">
-        <h1><a class="nav-link navbar-brand" href="#">探求学園Rails専攻</a></h1>
+        <h1><%= link_to '探求学園Rails専攻', root_path, class: "nav-link navbar-brand" %></h1>
       </div>
       <div>
         <% if logged_in? %>
-          <p><%= "#{@user.first_name} #{@user.last_name}" %></p>
+          <p><%= "#{ current_user.first_name } #{ current_user.last_name }" %></p>
           <ul class="navbar-nav">
             <!-- 商品検索ページが実装されたらリンクを作ること  -->
             <a class="nav-link text-dark" href="#">商品検索</a>
@@ -18,6 +18,7 @@
         <% else %>
           <ul class="navbar-nav">
             <%= link_to 'ログイン', login_path, class: "nav-link text-dark button" %>
+            <!-- ユーザー登録ページが実装されたらリンクを作ること  -->
             <a class="nav-link text-dark" href="#">新規登録</a>
           </ul>
         <% end %>
