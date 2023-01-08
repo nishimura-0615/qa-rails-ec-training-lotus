@@ -1,0 +1,96 @@
+<div class="container">
+  <div class="jumbotron text-center bg-white mt-5">
+    <h2>お客様情報登録</h2>
+  </div>
+  <%= form_for(@user) do |f| %>
+    <div class="row mb-5 ml-5">
+      <div class="col-sm-6 offset-sm-3">
+        <div>
+          <p>氏名</p>
+          <div class="row ms-2">
+            <label for="last_name" class="col-sm">姓</label>
+            <div class="col-sm-5">
+              <input required type="text" class="form-control" id="last_name" maxlength='10'>
+            </div>
+            <label for="first_name" class="col-sm">名</label>
+            <div class="col-sm-5">
+              <input required type="text" class="form-control" id="first_name" maxlength='10'>
+            </div>
+          </div>
+          <div>
+            <label for="zipcode">郵便場号</label>
+            <div class="col-sm-6 ms-4">
+              <input required type="text" class="form-control" id="zipcode" pattern="[1-9][0-9]*" length="7">
+            </div>
+          </div>
+          <div>
+            <p class="mb-1">住所</p>
+            <div class="ms-4">
+              <div class="row">
+                <label for="prefecture" class="mt-2 ml-4 col-sm">都道府県</label>
+                <div class="col-sm-9 mt-1">
+                  <input required type="text" class="form-control" id="prefecture" maxlength='5'>
+                </div>
+              </div>
+
+              <div class="row">
+                <label for="municipality" class="ml-4 mt-2 col-sm">市町村区</label>
+                <div class="col-sm-9 mt-1">
+                  <input required type="text" class="form-control" id="municipality" maxlength='10'>
+                </div>
+              </div>
+              <div class="row">
+                <label for="address" class="mt-2 ml-4 mr-2 col-sm">番地</label>
+                <div class="col-sm-9 ml-4 mt-1">
+                  <input required type="text" class="form-control" id="address" maxlength='15'>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <label for="apartments" class="ml-2 ms-4">マンション・部屋番号</label>
+            <div class="offset-sm-1">
+              <div class="ml-5 mr-5">
+                <input required type="text" class="form-control" id="apartments" maxlength='20'>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <label for="email">メールアドレス</label>
+          <div class="ml-3 mr-5 ms-4">
+            <input type="text" class="form-control" id="email">
+          </div>
+        </div>
+        <div>
+          <label for="phone_number">電話番号</label>
+          <div class="ml-3 mr-5 ms-4">
+            <input required type="text" pattern="[1-9][0-9]*" class="form-control" id="phone_number" maxlength="15">
+          </div>
+        </div>
+        <div>
+          <label for="password">パスワード</label>
+          <div class="col-sm-8 ms-4">
+            <input required type="password" class="form-control" id="password" pattern="^[0-9A-Za-z]+$" minlength='6'
+              maxlength='15'>
+          </div>
+        </div>
+        <div>
+          <label for="password">パスワード再入力</label>
+          <div class="col-sm-8 ms-4">
+            <input required type="text" class="form-control" id="password" pattern="^[0-9A-Za-z]+$" minlength='6'
+              maxlength='15'>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-sm-2 mt-5">
+            <%= f.submit "登録", class: "btn btn-primary" %>
+          </div>
+        </div>
+        <div class="mt-5 text-center">
+          <h3><a href="#">ログインはこちらから</a></h3>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
