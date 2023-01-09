@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       flash[:successful] = I18n.t("activerecord.errors.models.user.message.create.successful")
-      redirect_to log_in
+      redirect_to login_path
     else
       flash[:failed] = I18n.t("activerecord.errors.models.user.message.create.failed")
       render "users/new"
