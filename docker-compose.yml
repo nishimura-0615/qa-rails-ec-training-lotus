@@ -23,6 +23,8 @@ services:
       - appdata
     links:
       - "postgres"
+    tty: true
+    stdin_open: true
 
   appdata:
     image: tianon/true
