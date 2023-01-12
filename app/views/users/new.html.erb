@@ -7,56 +7,72 @@
       <div class="col-sm-6 offset-sm-3">
         <div>
           <p>氏名</p>
+          <div class="row ms-2">
             <div class="col-sm-5">
               <%= form.label :first_name, "姓" %>
-              <%= form.text_field :first_name %>
-            </div>
-            <div class="col-sm-5">
-              <%= form.label :last_name, "名" %>
-              <%= form.text_field :last_name %>
+              <div class="col-sm">
+                <%= form.text_field :first_name %>
+              </div>
             </div>
 
-            <%= form.label :zipcode %>
-            <div class="col-sm-6 ms-4">
-              <%= form.text_field :zipcode, style: "width: 60%;"  %>
+            <div class="col-sm-5">
+              <%= form.label :last_name, "名" %>
+              <div class="col-sm">
+                <%= form.text_field :last_name %>
+              </div>
+            </div>
+            <div>
+              <%= form.label :zipcode %>
+              <div class="col-sm">
+                <%= form.text_field :zipcode %>
+              </div>
             </div>
           </div>
+
           <div>
             <p class="mb-1">住所</p>
             <div class="ms-4">
               <div class="row">
-                <%= form.label :prefecture, "都道府県" %>
-                <div class="col-sm-9 mt-1">
-                  <%= form.text_field :prefecture, style: "width: 60%;" %>
+                <div class="mt-2 ml-4 col-sm">
+                  <%= form.label :prefecture, "都道府県" %>
+                  <div class="col-sm-9 mt-1">
+                    <%= form.text_field :prefecture %>
+                  </div>
                 </div>
               </div>
 
               <div class="row">
-                <%= form.label :municipality, "市区町村" %>
-                <div class="col-sm-9 mt-1">
-                  <%= form.text_field :municipality, style: "width: 60%;" %>
+                <div  class="ml-4 mt-2 col-sm">
+                  <%= form.label :municipality, "市区町村" %>
+                  <div class="col-sm-9 mt-1">
+                    <%= form.text_field :municipality %>
+                  </div>
                 </div>
               </div>
               <div class="row">
-                <%= form.label :address, "番地" %>
-                <div class="col-sm-9 ml-4 mt-1">
-                  <%= form.text_field :address, style: "width: 60%;" %>
+                <div class="mt-2 ml-4 mr-2 col-sm">
+                  <%= form.label :address, "番地" %>
+                  <div class="col-sm-9 ml-4 mt-1">
+                    <%= form.text_field :address %>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+
           <div>
             <%= form.label :apartments, "マンション・部屋番号" %>
-            <div class="offset-sm-1">
-              <div class="ml-5 mr-5">
-                <%= form.text_field :apartments, style: "width: 60%;" %>
+              <div class="offset-sm-1">
+                <div class="ml-5 mr-5">
+                  <%= form.text_field :apartments, style: "width: 60%;" %>
+                </div>
               </div>
-            </div>
           </div>
+
           <div>
             <%= form.label :email, "メールアドレス" %>
             <div class="ml-3 mr-5 ms-4">
-              <%= form.text_field :email, style: "width: 60%;"  %>
+              <%= form.text_field :email, style: "width: 60%;" %>
             </div>
           </div>
           <div>
