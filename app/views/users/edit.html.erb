@@ -85,9 +85,7 @@
       </div>
 
       <div class="col-5 offset-2">
-          <!-- TODO: ユーザー情報削除の実装時に退会ボタンを実装する-->
-          <button class="btn btn-danger" type="submit">退会</button>
+        <%= button_to '退会', root_path, method: :delete, class: "btn btn-primary", form: { data: { turbo_confirm: "本当に削除しますか？" } } %>
       </div>
-    </div>
   <% end %>
 </main>
