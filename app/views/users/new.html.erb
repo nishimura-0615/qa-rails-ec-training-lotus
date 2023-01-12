@@ -8,23 +8,20 @@
         <div>
           <p>氏名</p>
           <div class="row ms-2">
+            <%= form.label :first_name, "名", class: "col-sm" %>
             <div class="col-sm-5">
-              <%= form.label :first_name, "姓" %>
-              <div class="col-sm">
-                <%= form.text_field :first_name %>
-              </div>
+              <%= form.text_field :first_name, class: "form-control", id: "first_name", maxlength: "10" %>
             </div>
 
+            <%= form.label :last_name, "姓",  class: "col-sm" %>
             <div class="col-sm-5">
-              <%= form.label :last_name, "名" %>
-              <div class="col-sm">
-                <%= form.text_field :last_name %>
-              </div>
+              <%= form.text_field :first_name, class: "form-control", id: "last_name", maxlength: "10" %>
             </div>
+
             <div>
               <%= form.label :zipcode %>
-              <div class="col-sm">
-                <%= form.text_field :zipcode %>
+              <div class="col-sm-6 ms-4">
+                <%= form.text_field :zipcode, class: "form-control", id: "zipcode", pattern: "[1-9][0-9]*", length: "7" %>
               </div>
             </div>
           </div>
@@ -33,66 +30,64 @@
             <p class="mb-1">住所</p>
             <div class="ms-4">
               <div class="row">
-                <div class="mt-2 ml-4 col-sm">
-                  <%= form.label :prefecture, "都道府県" %>
+                  <%= form.label :prefecture, "都道府県", class:"mt-2 ml-4 col-sm" %>
                   <div class="col-sm-9 mt-1">
-                    <%= form.text_field :prefecture %>
+                    <%= form.text_field :prefecture, class: "form-control", id: "prefecture", maxlength: "5" %>
                   </div>
                 </div>
               </div>
 
               <div class="row">
-                <div  class="ml-4 mt-2 col-sm">
-                  <%= form.label :municipality, "市区町村" %>
-                  <div class="col-sm-9 mt-1">
-                    <%= form.text_field :municipality %>
-                  </div>
+                <%= form.label :municipality, "市区町村", class:"ml-4 mt-2 col-sm" %>
+                <div class="col-sm-9 mt-1">
+                  <%= form.text_field :municipality, class: "form-control", id: "municipality", maxlength: "10" %>
                 </div>
               </div>
+
               <div class="row">
-                <div class="mt-2 ml-4 mr-2 col-sm">
-                  <%= form.label :address, "番地" %>
-                  <div class="col-sm-9 ml-4 mt-1">
-                    <%= form.text_field :address %>
-                  </div>
+                <%= form.label :address, "番地", class:"mt-2 ml-4 mr-2 col-sm" %>
+                <div class="col-sm-9 ml-4 mt-1">
+                  <%= form.text_field :address, class: "form-control", id: "address", maxlength: "15" %>
                 </div>
               </div>
             </div>
           </div>
 
           <div>
-            <%= form.label :apartments, "マンション・部屋番号" %>
+            <%= form.label :apartments, "マンション・部屋番号", class:"ml-2 ms-4" %>
               <div class="offset-sm-1">
                 <div class="ml-5 mr-5">
-                  <%= form.text_field :apartments, style: "width: 60%;" %>
+                  <%= form.text_field :apartments, class: "form-control", id: "apartments", maxlength: "20" %>
                 </div>
               </div>
           </div>
-
           <div>
             <%= form.label :email, "メールアドレス" %>
             <div class="ml-3 mr-5 ms-4">
-              <%= form.text_field :email, style: "width: 60%;" %>
+              <%= form.text_field :email, class: "form-control", id: "email" %>
             </div>
           </div>
           <div>
             <%= form.label :phone_number, "電話番号" %>
             <div class="ml-3 mr-5 ms-4">
-              <%= form.text_field :phone_number, style: "width: 60%;"  %>
+              <%= form.text_field :phone_number, pattern: "[1-9][0-9]*", class: "form-control", id: "phone_number", maxlength: "15" %>
             </div>
           </div>
           <div>
             <%= form.label :password, "パスワード" %>
             <div class="col-sm-8 ms-4">
-              <%= form.password_field :password, style: "width: 60%;"  %>
+              <%= form.password_field :password, class: "form-control", id: "password", pattern: "^[0-9A-Za-z]+$", minlength: "6",
+              maxlength: "15" %>
             </div>
           </div>
           <div>
             <%= form.label :password_confirmation, "パスワード (再入力)" %>
             <div class="col-sm-8 ms-4">
-              <%= form.password_field :password_confirmation, style: "width: 60%;" %>
+              <%= form.password_field :password_confirmation, class: "form-control", id: "password", pattern: "^[0-9A-Za-z]+$", minlength: "6",
+              maxlength: "15" %>
             </div>
           </div>
+
           <div class="row justify-content-center">
             <div class="col-sm-2 mt-5">
               <%= form.submit "登録", class: "btn btn-primary" %>
