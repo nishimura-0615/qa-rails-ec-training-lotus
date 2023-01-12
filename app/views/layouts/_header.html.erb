@@ -18,8 +18,7 @@
         <% else %>
           <ul class="navbar-nav">
             <%= link_to 'ログイン', login_path, class: "nav-link text-dark button" %>
-            <!-- ユーザー登録ページが実装されたらリンクを作ること  -->
-            <a class="nav-link text-dark" href="#">新規登録</a>
+            <%= link_to '新規登録', new_user_path, class: "nav-link text-dark button" %>
           </ul>
         <% end %>
       </div>

@@ -4,6 +4,9 @@ ja:
       models:
         user:
           message:
+            create:
+              successful: "ユーザーを登録しました。こちらからログインしてください。"
+              failed: "ユーザーの登録に失敗しました。"
             update:
               success: "ユーザー情報を更新しました。"
               danger: "ユーザー情報の更新に失敗しました。"
