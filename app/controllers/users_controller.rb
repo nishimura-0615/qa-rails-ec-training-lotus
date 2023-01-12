@@ -21,7 +21,7 @@ class UsersController < ApplicationController
       redirect_to login_path
     else
       flash[:danger] = I18n.t("activerecord.errors.models.user.message.create.failed")
-      render "users/new"
+      render "new"
     end
   end
 
