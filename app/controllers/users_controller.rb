@@ -14,12 +14,12 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     @user.user_classification_id =1
+
     if @user.save
-      session[:user_id] = @user.id
-      flash[:successful] = I18n.t("activerecord.errors.models.user.message.create.successful")
+      flash[:success] = I18n.t("activerecord.errors.models.user.message.create.successful")
       redirect_to login_path
     else
-      flash[:failed] = I18n.t("activerecord.errors.models.user.message.create.failed")
+      flash[:danger] = I18n.t("activerecord.errors.models.user.message.create.failed")
       render "users/new"
     end
   end
