@@ -8,16 +8,14 @@
         <div>
           <p>氏名</p>
           <div class="row ms-2">
+            <%= form.label :last_name, "姓",  class: "col-sm" %>
+            <div class="col-sm-5">
+              <%= form.text_field :last_name, class: "form-control", id: "last_name", maxlength: "10" %>
+            </div>
             <%= form.label :first_name, "名", class: "col-sm" %>
             <div class="col-sm-5">
               <%= form.text_field :first_name, class: "form-control", id: "first_name", maxlength: "10" %>
             </div>
-
-            <%= form.label :last_name, "姓",  class: "col-sm" %>
-            <div class="col-sm-5">
-              <%= form.text_field :first_name, class: "form-control", id: "last_name", maxlength: "10" %>
-            </div>
-
             <div>
               <%= form.label :zipcode %>
               <div class="col-sm-6 ms-4">
