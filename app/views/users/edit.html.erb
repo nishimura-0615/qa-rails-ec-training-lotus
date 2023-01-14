@@ -85,7 +85,14 @@
       </div>
 
       <div class="col-5 offset-2">
-        <%= button_to '退会', root_path, method: :delete, class: "btn btn-primary", form: { data: { turbo_confirm: "本当に削除しますか？" } } %>
+       <%= button_to '退会', @user, method: :delete, class: "btn btn-primary", onclick: "return confirmDestroy('削除しますか?')"  %>
       </div>
   <% end %>
 </main>
+<script>
+  function confirmDestroy(message) {
+    if (!confirm(message)) {
+      return false;
+    }
+  }
+</script>
