@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  skip_before_action :verify_authenticity_token
   def show
     @user = User.find_by(id: params[:id])
   end
@@ -38,7 +37,7 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    current_user.destroy
+    User.find_by(id: params[:id]).destroy
     redirect_to root_path
   end
 
