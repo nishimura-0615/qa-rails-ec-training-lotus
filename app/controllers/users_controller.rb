@@ -37,7 +37,7 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    User.find_by(id: params[:id]).destroy
+    User.find_by(id: params[:id]).destroy!
     flash[:success] = I18n.t("activerecord.errors.models.user.message.destroy.success")
     redirect_to root_path
   end
