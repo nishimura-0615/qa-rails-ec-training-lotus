@@ -85,9 +85,14 @@
       </div>
 
       <div class="col-5 offset-2">
-          <!-- TODO: ユーザー情報削除の実装時に退会ボタンを実装する-->
-          <button class="btn btn-danger" type="submit">退会</button>
+       <%= button_to '退会', @user, method: :delete, class: "btn btn-primary", onclick: "return confirmDestroy('削除しますか?')"  %>
       </div>
-    </div>
   <% end %>
 </main>
+<script>
+  function confirmDestroy(message) {
+    if (!confirm(message)) {
+      return false;
+    }
+  }
+</script>
