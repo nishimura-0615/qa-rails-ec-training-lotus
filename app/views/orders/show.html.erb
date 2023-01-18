@@ -15,7 +15,6 @@
         </div>
         <% if @order.prepared? %>
           <div class="text-end">
-            <!-- TODO: 注文履歴ページの実装時に対応したリンクを記述する-->
             <%= button_to '注文をキャンセルする', order_path, method: :delete, class: "btn btn-primary" %>
           </div>
         <% end %>
