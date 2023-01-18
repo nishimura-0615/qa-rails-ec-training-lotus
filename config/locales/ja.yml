@@ -12,3 +12,8 @@ ja:
               danger: "ユーザー情報の更新に失敗しました。"
             destroy:
               succeeded: "退会しました"
+        order:
+          message:
+            destroy:
+              success: "注文をキャンセルしました。"
+              eroor: "この商品は削除できません"

@@ -4,8 +4,14 @@ class OrdersController < ApplicationController
   end
 
   def destroy
-    @order = Order.find_by(id: params[:id]).destroy!
-    # TODO:注文履歴ページの実装時に対応したリンクにリダイレクトする様に修正
-    redirect_to order_path
+    @order = Order.find_by(id: params[:id])
+    if @order.prepared?
+      @order.destroy!
+      flash[:success] = I18n.t("activerecord.errors.models.order.message.destroy.success")
+      redirect_to root_path
+    else
+      flash.now[:danger] = I18n.t("activerecord.errors.models.order.message.destroy.eroor")
+      render "show"
+    end
   end
 end
