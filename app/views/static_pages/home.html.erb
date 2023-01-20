@@ -20,5 +20,12 @@
         </p>
         <%= link_to 'ログイン', login_path, class: "btn btn-primary" %>
       </div>
+      <div class="mt-3 mr-3 text-center col-sm-3">
+        <p>
+          ゲストログインで<br>
+          ログインされる方はこちら
+        </p>
+        <%= button_to 'ゲストログイン', guest_login_path, class: "btn btn-primary" %>
+      </div>
     <% end %>
   </div>

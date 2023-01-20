@@ -20,4 +20,20 @@ class User < ApplicationRecord
   validates :phone_number, presence: true, length: { maximum: 15 }, uniqueness: true, format: { with: VALID_NUMBER_REGEX }
   validates :company_name, presence: true, length: { maximum: 128 }
   validates :delete_flag, inclusion: { in: [true, false] }
+
+  def self.guest
+    find_or_create_by!(email: "guest@example.com") do |user|
+      user.password = SecureRandom.urlsafe_base64
+      user.first_name = SecureRandom.urlsafe_base64
+      user.last_name = SecureRandom.urlsafe_base64
+      user.user_classification_id = SecureRandom.urlsafe_base64
+      user.zipcode = SecureRandom.urlsafe_base64
+      user.prefecture = SecureRandom.urlsafe_base64
+      user.municipality = SecureRandom.urlsafe_base64
+      user.address = SecureRandom.urlsafe_base64
+      user.apartments = SecureRandom.urlsafe_base64
+      user.phone_number = SecureRandom.urlsafe_base64
+      user.company_name = SecureRandom.urlsafe_base64
+    end
+  end
 end

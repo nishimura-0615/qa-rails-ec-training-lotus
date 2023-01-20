@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :ensure_normal_user, %i[edit update destroy]
   def show
     @user = User.find_by(id: params[:id])
   end
@@ -43,6 +44,13 @@ class UsersController < ApplicationController
   end
 
   private
+
+    def ensure_normal_user
+      if resource.email == "guest@example.com"
+        redirect_to
+        flash[:danger] = I18n.t("guest_login.fail")
+      end
+    end
 
     def user_params
       params.require(:user).permit(:first_name, :last_name, :email, :zipcode, :password, :prefecture, :address, :municipality, :apartments, :phone_number,
