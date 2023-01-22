@@ -23,17 +23,18 @@ class User < ApplicationRecord
 
   def self.guest
     find_or_create_by!(email: "guest@example.com") do |user|
-      user.password = SecureRandom.urlsafe_base64
-      user.first_name = SecureRandom.urlsafe_base64
-      user.last_name = SecureRandom.urlsafe_base64
-      user.user_classification_id = SecureRandom.urlsafe_base64
-      user.zipcode = SecureRandom.urlsafe_base64
-      user.prefecture = SecureRandom.urlsafe_base64
-      user.municipality = SecureRandom.urlsafe_base64
-      user.address = SecureRandom.urlsafe_base64
-      user.apartments = SecureRandom.urlsafe_base64
-      user.phone_number = SecureRandom.urlsafe_base64
-      user.company_name = SecureRandom.urlsafe_base64
+      user.password = "password"
+      user.first_name = "ゲスト"
+      user.last_name = "ユーザー"
+      user.user_classification_id = 1
+      user.zipcode = "123-4567"
+      user.prefecture = "東京都"
+      user.municipality = "千代田区"
+      user.address = "代々木2丁目5-1"
+      user.apartments = "代々木ビル5F"
+      user.phone_number = "000000000011"
+      user.company_name = "株式会社tech"
+      user.delete_flag = false
     end
   end
 end
