@@ -16,4 +16,11 @@ class SessionsController < ApplicationController
     log_out if logged_in?
     redirect_to login_path
   end
+
+  def guest_sign_in
+    user = User.guest
+    log_in user
+    flash[:success] = I18n.t("guest_login.success")
+    redirect_to user
+  end
 end

@@ -1,4 +1,7 @@
 ja:
+  guest_login:
+    success: "ゲストユーザーでログインしました"
+    fail: "ゲストユーザーの更新、削除はできません"
   activerecord:
     errors:
       models:

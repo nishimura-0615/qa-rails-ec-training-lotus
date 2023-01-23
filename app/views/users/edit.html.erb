@@ -77,16 +77,18 @@
       </tr>
     </table>
 
-    <div class="row mt-5">
-      <div class="col-5">
-        <div class="d-flex justify-content-end">
-          <%= form.submit "修正", class: "btn btn-primary" %>
+    <% unless @user.email == "guest@example.com" %>
+      <div class="row mt-5">
+        <div class="col-5">
+          <div class="d-flex justify-content-end">
+            <%= form.submit "修正", class: "btn btn-primary" %>
+          </div>
+        </div>
+        <div class="col-5 offset-2">
+          <%= button_to '退会', @user, method: :delete, class: "btn btn-primary", onclick: "return confirmDestroy('削除しますか?')"  %>
         </div>
       </div>
-
-      <div class="col-5 offset-2">
-       <%= button_to '退会', @user, method: :delete, class: "btn btn-primary", onclick: "return confirmDestroy('削除しますか?')"  %>
-      </div>
+    <% end %>
   <% end %>
 </main>
 <script>
