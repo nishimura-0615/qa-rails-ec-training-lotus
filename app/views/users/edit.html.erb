@@ -76,9 +76,8 @@
         </td>
       </tr>
     </table>
-    <!-- ゲストユーザーがログインした際に修正・削除ボタンを表示させない条件分岐を記述-->
-    <% if @user.email == "guest@example.com" %>
-      <% else %>
+
+    <% unless @user.email == "guest@example.com" %>
       <div class="row mt-5">
         <div class="col-5">
           <div class="d-flex justify-content-end">
@@ -86,7 +85,8 @@
           </div>
         </div>
         <div class="col-5 offset-2">
-        <%= button_to '退会', @user, method: :delete, class: "btn btn-primary", onclick: "return confirmDestroy('削除しますか?')"  %>
+          <%= button_to '退会', @user, method: :delete, class: "btn btn-primary", onclick: "return confirmDestroy('削除しますか?')"  %>
+        </div>
       </div>
     <% end %>
   <% end %>
