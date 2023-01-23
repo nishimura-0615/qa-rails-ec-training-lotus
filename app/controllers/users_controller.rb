@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :ensure_normal_user, %i[edit update destroy]
+  before_action :ensure_normal_user, only: %i[update destroy]
   def show
     @user = User.find_by(id: params[:id])
   end
