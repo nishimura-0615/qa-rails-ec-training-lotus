@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
   def guest_sign_in
     user = User.guest
     log_in user
+    flash[:success] = I18n.t("guest_login.success")
     redirect_to user
-    flash.now[:success] = I18n.t("guest_login.success")
   end
 end

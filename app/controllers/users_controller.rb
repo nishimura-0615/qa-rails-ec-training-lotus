@@ -47,8 +47,8 @@ class UsersController < ApplicationController
 
     def ensure_normal_user
       if current_user.email == "guest@example.com"
-        redirect_to user
         flash[:danger] = I18n.t("guest_login.fail")
+        redirect_to user
       end
     end
 
